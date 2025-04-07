@@ -13,7 +13,7 @@ func TestStackFibonacci(t *testing.T) {
 		}
 	)
 
-	path := Stack[string, string](``, func(t string) []string {
+	path := Stack[string, string]([]string{``}, func(t string) []string {
 		return slice[t]
 	}, func(a string) string {
 		return a
