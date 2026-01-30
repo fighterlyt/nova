@@ -21,3 +21,24 @@ func TestStackFibonacci(t *testing.T) {
 
 	t.Log(path)
 }
+
+func TestStackSum2(t *testing.T) {
+	var (
+		sum int64
+	)
+
+	path := Stack[int64, int64]([]int64{100}, func(i int64) []int64 {
+		sum += i
+
+		if i > 1 {
+			return []int64{i - 1}
+		}
+
+		return nil
+	}, func(i int64) int64 {
+		return i
+	}, 10)
+
+	t.Log(sum)
+	t.Log(path)
+}
